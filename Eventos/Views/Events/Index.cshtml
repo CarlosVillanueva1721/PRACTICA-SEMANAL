@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Eventos.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+<p>
+    <a href="@Url.Action("Create","Events")" class="btn btn-sm btn-success">Nuevo Evento</a>
+</p>
+
+<div class="row justify-content-center ">
+    <div class="col-md-12">
+        <div class="card m-4">
+            <div class="card-header py-2 bg-secondary">
+                <h4 class="text-center text-white">Lista de Eventos</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover table-sm">
+                    <tr>
+                        <th>
+                            Nombre Ciudad
+                        </th>
+                        <th>
+                            Nombre Evento
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Fecha)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Organisador)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.City.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fecha)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Organisador)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" }) |
+                                @Html.ActionLink("Detalle", "Details", new { id = item.Id }, new { @class = "btn btn-info btn-sm" }) |
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

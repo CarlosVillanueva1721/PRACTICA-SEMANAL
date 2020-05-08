@@ -1,0 +1,43 @@
+﻿@model Eventos.Models.City
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3>¿Seguro que deseas eliminar esta Ciudad?</h3>
+<div>
+    <h4>City</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoPostal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoPostal)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    <input type="submit" value="Delete" class="btn btn-sm btn-success" /> |
+    @Html.ActionLink("Back to List", "Index", new { id = Model.Id }, new { @class = "btn btn-danger btn-sm" })
+</div>
+    }
+
+
+</div>

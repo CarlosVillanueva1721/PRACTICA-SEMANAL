@@ -1,0 +1,58 @@
+﻿@model Eventos.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.City.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organisador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organisador)
+        </dd>
+
+    </dl>
+</div>
+
+<td>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning btn-sm" }) |
+    @Html.ActionLink("Back to List", "Index", new { id = Model.Id }, new { @class = "btn btn-danger btn-sm" })
+</td>
